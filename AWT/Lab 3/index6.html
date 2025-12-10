@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // array destructuring
+        const numbers = [10, 20, 30, 40, 50];
+        const [a, b, c] = numbers;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(numbers);
+
+        // skipping elements
+        const [x, , y] = numbers;
+        console.log(x);
+        console.log(y);
+
+        const colors = ['red', 'green', 'blue', 'yellow'];
+        const [firstColor, , thirdColor] = colors;
+        console.log(firstColor);
+        console.log(thirdColor);
+
+        // default values
+        const fruits = ['apple'];
+        const [fruit1, fruit2 = 'banana'] = fruits;
+        console.log(fruit1);
+        console.log(fruit2);
+
+        // rest operator
+        const [num1, num2, ...restNumbers] = numbers;
+        console.log(num1);
+        console.log(num2);
+        console.log(restNumbers);
+
+        // swapping values
+        let p = 1, q = 2;
+        [p, q] = [q, p];
+        console.log(p);
+        console.log(q);
+
+
+        // object destructuring
+        const person = {
+            name: 'Dhairya',
+            age: 19,
+            city: 'Junagadh'
+        }
+        const { name, age } = person;
+        console.log(name);
+        console.log(age);
+
+        // renaming variables
+        const { city: hometown } = person;
+        console.log(hometown);
+
+        // default values
+        const { country = 'India' } = person;
+        console.log(country);
+
+        // rest operator
+        const { name: personName, ...restProps } = person;
+        console.log(personName);
+        console.log(restProps);
+    </script>
+</body>
+</html>

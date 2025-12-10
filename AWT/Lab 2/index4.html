@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .form-div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, button {
+            width: 20%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="" id="myForm">
+            <div class="form-div">
+                <label>Enter name: </label>
+                <input type="text">
+                <label>Enter email: </label>
+                <input type="email">
+                <label>Enter password: </label>
+                <input type="password">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div id="myDiv"></div>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitEvent();
+        });
+
+        const myDiv = document.getElementById('myDiv');
+
+        function submitEvent() {
+            myDiv.innerHTML = "Submit Clicked";
+        }
+    </script>
+</body>
+</html>

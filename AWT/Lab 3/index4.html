@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const numbersOne = [1, 2, 3, 4, 5];
+        const numbersTwo = [6, 7, 8, 9, 10];
+        const numbersCombined = [...numbersOne, ...numbersTwo];
+        console.log(numbersCombined);
+
+        const person = {
+            name: "Dhairya",
+            age: 17
+        };
+        const updatedPerson = {
+            ...person,
+            age: 19,
+            city: "Junagadh"
+        };
+        console.log(updatedPerson);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let num1 = parseInt(prompt("Enter the starting number of the range:"));
+        let num2 = parseInt(prompt("Enter the ending number of the range:"));
+
+        let primes = [];
+
+        for(let i=num1; i<=num2; i++) {
+            let isPrime = true;
+            if(i <= 1) {
+                isPrime = false;
+            }
+            else {
+                for(let j=2; j<=Math.sqrt(i); j++) {
+                    if(i % j === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+            }
+            if(isPrime) {
+                primes.push(i);
+            }
+        }
+
+        alert("Prime numbers between " + num1 + " and " + num2 + " are " + primes);
+    </script>
+</body>
+</html>

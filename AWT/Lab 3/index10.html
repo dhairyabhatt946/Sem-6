@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Click any button in the mouse</h1>
+    <h2 id="displayResult"></h2>
+
+    <script>        
+        document.addEventListener('mousedown', (e) => {
+            if(e.button == 0) {
+                document.getElementById('displayResult').innerHTML = 'Left button clicked';
+            }
+            else if(e.button == 2) {
+                document.getElementById('displayResult').innerHTML = 'Right button clicked';
+            }
+        })
+    </script>
+</body>
+</html>

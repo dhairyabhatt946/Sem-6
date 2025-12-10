@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="click1()" ondblclick="doubleclick1()" onmouseenter="mouseenter1()" onmouseleave="mouseleave1()">Click</button>
+    <div id="myDiv"></div>
+
+    <script>
+        function click1() {
+            document.getElementById('myDiv').innerHTML = 'Button Clicked';
+        }
+
+        function doubleclick1() {
+            document.getElementById('myDiv').innerHTML = "Double Clicked";
+        }
+
+        function mouseenter1() {
+            document.getElementById('myDiv').innerHTML = "Mouse entered";
+        }
+        function mouseleave1() {
+            document.getElementById('myDiv').innerHTML = "Mouse Leaved";
+        }
+    </script>
+</body>
+</html>

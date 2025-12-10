@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <input type="text" id="inp">
+        <button onclick="addUser()">Add</button>
+    </div>
+    <div id="user-list"></div>
+
+    <script>
+        let users = [];
+
+        function display() {
+            userList = document.getElementById('user-list');
+            userList.innerHTML = '';
+            
+            users.forEach((user, index) => {
+                userList.innerHTML += `
+                    <div class="user-item">
+                        ${user} 
+                        <button onclick="deleteUser(${index})">Delete</button>
+                    </div>
+                `;
+            });
+        }
+
+        function addUser() {
+            let user = document.getElementById('inp').value;
+            if(user === '') {
+                alert('Please enter something!!');
+                return;
+            }
+            users.push(user);
+            display();
+        }
+
+        function deleteUser(i) {
+            users.pop(i);
+            display();
+        }
+    </script>
+</body>
+</html>

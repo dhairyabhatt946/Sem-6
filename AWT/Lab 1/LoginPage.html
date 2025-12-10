@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loginForm {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="loginForm">
+            <label>Enter email: </label>
+            <input type="email" id="email" required>
+            <span id="span1"></span>
+            <label>Enter password: </label>
+            <input type="password" id="password" required>
+            <span id="span2"></span>
+            <button type="submit" id="submit" onclick="validation">Login</button>
+        </div>
+    </div>
+
+    <script>
+        function validation() {
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+
+            document.getElementById('span1').innerHTML = '';
+            document.getElementById('span2').innerHTML = '';
+
+            pattern1 = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            pattern2 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}$/;
+
+            let regex1 = new RegExp(pattern1);
+            let regex2 = new RegExp(pattern2);
+
+            if(!regex1.test(email)) {
+                document.getElementById('span1').innerHTML = "Invalid email format!!";
+            }
+            if(!regex2.test(password)) {
+
+            }
+        }
+    </script>
+</body>
+</html>

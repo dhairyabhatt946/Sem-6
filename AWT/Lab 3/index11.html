@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List of roll numbers:</h1>
+    <div id="checkbox-div" ></div>
+    <h2 id="result"></h2>
+
+    <script>
+        const rollNumbers = [101, 102, 103, 104, 105];
+        const result = [];
+
+        let checkboxDiv = document.getElementById('checkbox-div');
+        let resultDiv = document.getElementById('result');
+
+        function handleCheckboxClick(checkbox, index) {
+            const value = rollNumbers[index];
+            if (checkbox.checked) {
+                if (!result.includes(value)) {
+                    result.push(value);
+                }
+            } else {
+                const removeIndex = result.indexOf(value);
+                if (removeIndex !== -1) {
+                    result.splice(removeIndex, 1);
+                }
+            }
+            console.log(result);
+            displayResult();
+        }
+
+        function displayResult() {
+            resultDiv.textContent = result.join(', ');
+        }
+        for (let i = 0; i < rollNumbers.length; i++) {
+            const rn = rollNumbers[i];
+            checkboxDiv.innerHTML += `<input type="checkbox" onclick="handleCheckboxClick(this, ${i})"><label>${rn}</label><br/>`;
+        }
+    </script>
+</body>
+</html>
